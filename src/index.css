@@ -17,4 +17,10 @@ body{
 
 a{
   font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #FF5C00;
 }
