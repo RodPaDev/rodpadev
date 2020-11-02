@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.title}</title>
+  <title>🤔 {data.title}</title>
 </svelte:head>
 
 <article>

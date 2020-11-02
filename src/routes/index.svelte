@@ -1,5 +1,5 @@
 <style lang="scss">
-  div{
+  div {
     padding: 1rem;
   }
   .whisper {
@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>TS SCSS Boilerplate</title>
+  <title>👋 RodPaDev</title>
 </svelte:head>
 
 <div>
@@ -43,28 +43,17 @@
     <p>
       It's nice to see you around here! I'm a 23 year old fullstack software
       developer.
-      <br />
+    </p>
+    <br/>
+    <p>
       Altough I attended Lambda School, I consider myself self-taught. My
       mission in life is to change the school system, not to merely change it
       but to revolutionize how we teach people.
     </p>
   </section>
 
-  <section class="tech-stack">
-    <h3>What's my tech stack?</h3>
-    <p>
-      I don't like tech stacks. I believe that as a software developer, we
-      should strive on learning and not keep resuing the same tools! Take this
-      website as an example, the first version was written in React, was a
-      single page application and I used DEV.to for my blog, now it is written
-      with Svelte, it is server side rendering and it uses ButterCMS for my blog
-      posts
-    </p>
-  </section>
-
   <section class="tech-skills">
     <h3>What are my most used tech skills?</h3>
     <p>HTML, CSS, ReactJS, Redux, PostgreSQL, NodeJs, ExpressJs, Python, C#</p>
-    <p class="whisper">2 impostors remaining.</p>
   </section>
 </div>

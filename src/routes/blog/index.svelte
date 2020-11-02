@@ -54,6 +54,10 @@
   })
 </script>
 
+<svelte:head>
+  <title>📰 Blog</title>
+</svelte:head>
+
 {#each posts as post}
   <a href="/blog/{post.slug}">
     <article>
