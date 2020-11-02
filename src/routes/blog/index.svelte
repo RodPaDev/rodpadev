@@ -7,8 +7,10 @@
 </script>
 
 <script lang="ts">
-    import ButterCMS from "./_ButterCMS";
+    import ButterCMS from "../../includes/TButterCMS"
     export let token;
+    let butter = new ButterCMS(token)
+    butter.printKey()
 </script>
 
 <main>

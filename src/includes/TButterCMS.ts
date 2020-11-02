@@ -1,6 +1,6 @@
 import Butter from 'buttercms'
 
-export default class ButterCMS {
+class ButterCMS {
   API_KEY: string = null
   butter = null
 
@@ -35,3 +35,5 @@ export default class ButterCMS {
     console.log(this.API_KEY)
   }
 }
+
+export default ButterCMS;
