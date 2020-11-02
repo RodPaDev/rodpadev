@@ -1,9 +1,6 @@
 import Butter from 'buttercms'
 
 class ButterCMS {
-  API_KEY = null
-  butter = null
-
   constructor(API_KEY) {
     this.API_KEY = API_KEY;
     this.butter = Butter(API_KEY)
