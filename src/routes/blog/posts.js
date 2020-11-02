@@ -1,2 +1,2 @@
 import Butter from 'buttercms';
-const butter = Butter('your_api_token');
+const butter = Butter(process.env.BUTTER_KEY);
