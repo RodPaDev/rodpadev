@@ -1,0 +1,27 @@
+:root {
+  font-size: 62.5%;
+  font-family: 'Source Code Pro', monospace;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: content-box;
+}
+
+p {
+  font-size: $fs_mobileRegular;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $fs_mobileBig;
+}
+
+h2 {
+  font-size: $fs_mobileGrande;
+}
+
+h3 {
+  font-size: $fs_mobileMedium;
+}
