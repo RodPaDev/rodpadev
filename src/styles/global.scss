@@ -1,6 +1,6 @@
 :root {
   font-size: 62.5%;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 *,
@@ -10,7 +10,8 @@
 }
 
 p {
-  font-size: $fs_mobileRegular;
+  font-size: $fs_mobileParagraph;
+  font-weight: lighter;
   line-height: 1.2;
 }
 

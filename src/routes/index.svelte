@@ -1,4 +1,7 @@
 <style lang="scss">
+  div{
+    padding: 1rem;
+  }
   .whisper {
     font-size: $fs_mobileTiny;
     color: $grey;
@@ -30,7 +33,7 @@
   <title>TS SCSS Boilerplate</title>
 </svelte:head>
 
-<div class="page">
+<div>
   <section id="title">
     <h1>Patrick Rodrigues</h1>
     <h2>Software Developer</h2>

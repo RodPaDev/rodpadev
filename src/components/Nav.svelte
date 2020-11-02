@@ -2,6 +2,7 @@
   nav {
     max-width: 700px;
     padding: 1em;
+    margin: 0 auto;
   }
   ul {
     display: flex;
