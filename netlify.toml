@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/blog/:slug"
-  to = "/blog/:slug"
+  to = "/blog"
   status = 200
 
 [[redirects]]
