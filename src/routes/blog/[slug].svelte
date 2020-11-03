@@ -25,11 +25,28 @@
         content: '# ';
       }
     }
+    :global(h3){
+      font-size: $fs_mobileRegular;
+      font-weight: 500;
+      margin-bottom: 1rem;
+
+    }
     :global(p) {
       font-size: $fs_articleParagraph;
       margin-bottom: 2rem;
       line-height: 1.2;
       font-weight: lighter;
+    }
+    :global(ul) {
+      font-size: $fs_articleParagraph;
+      font-weight: lighter;
+      line-height: 1.3;
+      list-style-type: disc;
+      list-style-position: inside;
+      padding: 2rem;
+    }
+    :global(li) {
+      margin: 2rem 0;
     }
     :global(blockquote) {
       background: #f9f9f9;
