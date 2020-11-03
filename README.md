@@ -1,3 +1,10 @@
+I tell computers what to do, sometimes they listen, sometimes they yell at me in red.
+
+[Visit my website rodpa.dev](https://rodpa.dev)
+
+I work with cool stuff and I build cool stuff.
+
+
 ░░░░░░░░░░░░░░░░░░░░░▄▀░░▌    
 ░░░░░░░░░░░░░░░░░░░▄▀▐░░░▌    
 ░░░░░░░░░░░░░░░░▄▀▀▒▐▒░░░▌    
