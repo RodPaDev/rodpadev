@@ -30,6 +30,11 @@
     justify-content: center;
     padding: 10rem 0;
   }
+  .date{
+    font-size: $fs_mobileTiny;
+    text-align: right;
+    margin: 0;
+  }
 </style>
 
 <script context="module">
@@ -41,8 +46,10 @@
 </script>
 
 <script lang="ts">
+  import dayjs from 'dayjs'
+  
   import Loading from '../../components/Loading.svelte'
-
+  
   import { onMount } from 'svelte'
   import ButterCMS from '../../includes/ButterCMS'
   export let token
@@ -66,6 +73,7 @@
       <img src="{post.featured_image}" alt="{post.featured_image_alt}" />
       {/if}
       <p>{post.meta_description}...<span>Read More</span></p>
+      <p class="date">{dayjs(post.created).format('MMMM D, YYYY')}</p>
     </article>
   </a>
 {:else}

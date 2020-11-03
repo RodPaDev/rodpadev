@@ -20,10 +20,9 @@ class ButterCMS {
 
   async getPost(slug) {
     try {
-      // let options = { page, page_size, exclude_body: true }
       let result = await this.butter.post.retrieve(slug)
-
-      return result
+      let data = await result.data
+      return data
     } catch (error) {
       console.log(error)
     }

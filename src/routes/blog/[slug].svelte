@@ -59,25 +59,25 @@
       font-weight: 500;
     }
   }
-  .profile{
+  .profile {
     padding: 0.5rem;
     display: flex;
-    align-items:center;
-    img{
+    align-items: center;
+    img {
       width: 5rem;
       border-radius: 50%;
     }
-    div{
+    div {
       display: flex;
       align-items: baseline;
-      padding: 1rem
+      padding: 1rem;
     }
-    h2{
+    h2 {
       font-size: $fs_mobileRegular;
     }
-    p{
-      &::before{
-        content: ' • '
+    p {
+      &::before {
+        content: ' • ';
       }
       font-size: $fs_mobileTiny;
       font-weight: 500;
@@ -85,15 +85,19 @@
       margin-left: 0.5rem;
     }
   }
-  .article-footer{
+  .article-footer {
     border-top: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    p{
+    p {
       font-size: $fs_mobileSmall;
       margin: 0;
     }
+  }
+  .page-nav{
+    display: flex;
+    justify-content: space-between;
   }
 </style>
 
@@ -101,25 +105,34 @@
   import ButterCMS from '../../includes/ButterCMS'
   export async function preload(page, session) {
     const { slug } = page.params
-    let butter = new ButterCMS(session.BUTTER)
-    const res = await butter.getPost(slug)
-    const article = await res.data
-    
+    const { BUTTER } = session
+    let butter = new ButterCMS(BUTTER)
+    const article = await butter.getPost(slug)
+
     return { article }
   }
 </script>
 
 <script>
-  import dayjs from "dayjs"
-  import CustomParseFormat from "dayjs/plugin/customParseFormat"
+  import dayjs from 'dayjs'
   import { averageReadtime } from '../../includes/articleHelpers'
+  import NavigateBtn from '../../components/NavigateBtn.svelte'
+
+  // import { stores } from '@sapper/app'
   export let article
   const { data, meta } = article
-  
-  dayjs.extend(CustomParseFormat)
-  const date = dayjs(data.created).format("MMMM D, YYYY")
-  const readTime = averageReadtime(data.body)
 
+  // const { page } = stores()
+  // $:{
+  //   article = async () => await new ButterCMS(BUTTER).getPost($page.params.slug)
+  //   console.log(article)
+  // }
+
+  // $: article
+  // // console.log(article)
+
+  const date = dayjs(data.created).format('MMMM D, YYYY')
+  const readTime = averageReadtime(data.body)
 </script>
 
 <svelte:head>
@@ -143,9 +156,20 @@
   <img src="{data.featured_image}" alt="{data.featured_image_alt}" />
   <div class="article-body">
     {@html data.body}
-   <div class="article-footer">
-    <div class="addthis_inline_share_toolbox"></div>
-    <p>{date}</p>
-   </div>
+    <div class="article-footer">
+      <div class="addthis_inline_share_toolbox"></div>
+      <p>{date}</p>
+    </div>
   </div>
 </article>
+
+<div class="page-nav">
+  {#if meta.previous_post}
+    <NavigateBtn href="/blog/{meta.previous_post.slug}" />
+  {/if}
+
+  {#if meta.next_post}
+    <div></div>
+    <NavigateBtn href="/blog/{meta.next_post.slug}" isNext="{true}" />
+  {/if}
+</div>
