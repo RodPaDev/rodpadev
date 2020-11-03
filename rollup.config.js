@@ -121,21 +121,21 @@ export default {
    ** uncomment #swts to enable typescript for the service worker.
    ** TS seems to work fine with the service worker but when I switch it to TS there's like 9 type errors that I'm just not trying to deal with. <3
    */
-  serviceworker: {
-    //#swts input: config.serviceworker.input().replace(/\.js$/, '.ts')
-    input: config.serviceworker.input(),
-    output: config.serviceworker.output(),
-    plugins: [
-      resolve(),
-      replace({
-        'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
-      }),
-      commonjs(),
-      //#swts typescript()
-      !dev && terser(),
-    ],
+  // serviceworker: {
+  //   //#swts input: config.serviceworker.input().replace(/\.js$/, '.ts')
+  //   input: config.serviceworker.input(),
+  //   output: config.serviceworker.output(),
+  //   plugins: [
+  //     resolve(),
+  //     replace({
+  //       'process.browser': true,
+  //       'process.env.NODE_ENV': JSON.stringify(mode),
+  //     }),
+  //     commonjs(),
+  //     //#swts typescript()
+  //     !dev && terser(),
+  //   ],
 
-    onwarn,
-  },
+  //   onwarn,
+  // },
 }
