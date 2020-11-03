@@ -6,13 +6,17 @@
   }
   ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    @media (min-width: $desktop) {
+    justify-content: flex-end
+      
+    }
   }
   li {
     padding: 1rem;
   }
   a {
-    font-size: 2.6rem;
+    font-size: 2rem;
     color: black;
     text-decoration: none;
     &:hover {

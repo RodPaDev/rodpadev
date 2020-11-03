@@ -25,11 +25,10 @@
         content: '# ';
       }
     }
-    :global(h3){
+    :global(h3) {
       font-size: $fs_mobileRegular;
       font-weight: 500;
       margin-bottom: 1rem;
-
     }
     :global(p) {
       font-size: $fs_articleParagraph;
@@ -60,6 +59,42 @@
       font-weight: 500;
     }
   }
+  .profile{
+    padding: 0.5rem;
+    display: flex;
+    align-items:center;
+    img{
+      width: 5rem;
+      border-radius: 50%;
+    }
+    div{
+      display: flex;
+      align-items: baseline;
+      padding: 1rem
+    }
+    h2{
+      font-size: $fs_mobileRegular;
+    }
+    p{
+      &::before{
+        content: ' • '
+      }
+      font-size: $fs_mobileTiny;
+      font-weight: 500;
+      color: $orange;
+      margin-left: 0.5rem;
+    }
+  }
+  .article-footer{
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      font-size: $fs_mobileSmall;
+      margin: 0;
+    }
+  }
 </style>
 
 <script context="module">
@@ -69,16 +104,22 @@
     let butter = new ButterCMS(session.BUTTER)
     const res = await butter.getPost(slug)
     const article = await res.data
-
-    return { article, slug }
+    
+    return { article }
   }
 </script>
 
 <script>
+  import dayjs from "dayjs"
+  import CustomParseFormat from "dayjs/plugin/customParseFormat"
+  import { averageReadtime } from '../../includes/articleHelpers'
   export let article
-  export let slug
-  console.log(slug)
   const { data, meta } = article
+  
+  dayjs.extend(CustomParseFormat)
+  const date = dayjs(data.created).format("MMMM D, YYYY")
+  const readTime = averageReadtime(data.body)
+
 </script>
 
 <svelte:head>
@@ -92,9 +133,19 @@
 
 <article>
   <h1>{data.title}</h1>
+  <div class="profile">
+    <img src="{data.author.profile_image}" alt="" />
+    <div>
+      <h2>{data.author.first_name} {data.author.last_name}</h2>
+      <p>{readTime} min</p>
+    </div>
+  </div>
   <img src="{data.featured_image}" alt="{data.featured_image_alt}" />
   <div class="article-body">
     {@html data.body}
+   <div class="article-footer">
     <div class="addthis_inline_share_toolbox"></div>
+    <p>{date}</p>
+   </div>
   </div>
 </article>
