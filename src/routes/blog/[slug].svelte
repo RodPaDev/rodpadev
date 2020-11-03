@@ -63,6 +63,11 @@
 </script>
 
 <svelte:head>
+  <script
+    defer
+    type="text/javascript"
+    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fa09db30a87b736">
+  </script>
   <title>🤔 {data.title}</title>
 </svelte:head>
 
@@ -71,5 +76,6 @@
   <img src="{data.featured_image}" alt="{data.featured_image_alt}" />
   <div class="article-body">
     {@html data.body}
+    <div class="addthis_inline_share_toolbox"></div>
   </div>
 </article>

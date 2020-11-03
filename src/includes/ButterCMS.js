@@ -8,8 +8,9 @@ class ButterCMS {
 
   async getPostAll(page, page_size = 10, exclude_body = true) {
     try {
-      let options = { page, page_size, exclude_body }
+      let options = { page, page_size, exclude_body, preview: 1 }
       let result = await this.butter.post.list(options)
+      
 
       return result
     } catch (error) {
