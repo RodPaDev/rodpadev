@@ -121,7 +121,6 @@
   // import { stores } from '@sapper/app'
   export let article
   const { data, meta } = article
-
   // const { page } = stores()
   // $:{
   //   article = async () => await new ButterCMS(BUTTER).getPost($page.params.slug)
@@ -131,7 +130,7 @@
   // $: article
   // // console.log(article)
 
-  const date = dayjs(data.created).format('MMMM D, YYYY')
+  const date = dayjs(data.published).format('MMMM D, YYYY')
   const readTime = averageReadtime(data.body)
 </script>
 

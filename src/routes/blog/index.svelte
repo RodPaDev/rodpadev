@@ -73,7 +73,7 @@
       <img src="{post.featured_image}" alt="{post.featured_image_alt}" />
       {/if}
       <p>{post.meta_description}...<span>Read More</span></p>
-      <p class="date">{dayjs(post.created).format('MMMM D, YYYY')}</p>
+      <p class="date">{dayjs(post.published).format('MMMM D, YYYY')}</p>
     </article>
   </a>
 {:else}
