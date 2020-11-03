@@ -70,12 +70,14 @@
     const res = await butter.getPost(slug)
     const article = await res.data
 
-    return { article }
+    return { article, slug }
   }
 </script>
 
 <script>
   export let article
+  export let slug
+  console.log(slug)
   const { data, meta } = article
 </script>
 
