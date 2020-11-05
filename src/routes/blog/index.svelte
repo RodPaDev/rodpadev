@@ -57,7 +57,7 @@
   let posts = []
   onMount(async () => {
     const res = await butter.getPostAll(1)
-    posts = await res.data.data
+    posts = res
   })
 </script>
 

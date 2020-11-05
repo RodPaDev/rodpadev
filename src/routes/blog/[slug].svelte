@@ -118,17 +118,9 @@
   import { averageReadtime } from '../../includes/articleHelpers'
   import NavigateBtn from '../../components/NavigateBtn.svelte'
 
-  // import { stores } from '@sapper/app'
+
   export let article
   const { data, meta } = article
-  // const { page } = stores()
-  // $:{
-  //   article = async () => await new ButterCMS(BUTTER).getPost($page.params.slug)
-  //   console.log(article)
-  // }
-
-  // $: article
-  // // console.log(article)
 
   const date = dayjs(data.published).format('MMMM D, YYYY')
   const readTime = averageReadtime(data.body)
