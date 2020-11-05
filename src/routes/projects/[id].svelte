@@ -2,6 +2,10 @@
   .thumbnail {
     position: relative;
     a {
+      @media (min-width: $desktop) {
+        font-size: $fs_mobileRegular;
+
+      }
       font-size: $fs_mobileSmall;
       font-weight: 500;
       text-decoration: none;
@@ -9,9 +13,9 @@
       position: absolute;
       background: white;
       padding: 0.5rem;
-      border-radius: 0 0 0.5rem 0;
-      border-right: 0.3rem solid black;
-      border-bottom: 0.3rem solid black;
+      border-radius: 0 0 0.25rem 0;
+      border-right: 0.2rem solid black;
+      border-bottom: 0.2rem solid black;
       &:hover {
         color: $orange;
         border-color: $orange;
@@ -78,11 +82,13 @@
 </style>
 
 <script context="module">
+
   import ButterCMS from '../../includes/ButterCMS';
   export async function preload(page, session) {
     const { BUTTER } = session;
-    const { projectName } = page.params;
-    const options = { 'fields.name': projectName };
+    const { id } = page.params;
+
+    const options = { 'fields.name': id };
     let butter = new ButterCMS(BUTTER);
     let res = await butter.getCollection(['projects'], options);
     let project = await res.data.projects[0];
@@ -131,6 +137,8 @@
 
   <div class="links">
     <a href="{project.repo_url}">See the code</a>
-    <a href="{project.deploy_url}">Latest Deployment</a>
+    {#if project.deploy_url.length}
+      <a href="{project.deploy_url}">Latest Deployment</a>
+    {/if}
   </div>
 </div>

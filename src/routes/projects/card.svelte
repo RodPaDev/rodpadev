@@ -6,6 +6,9 @@
     @media (min-width: $desktop) {
       width: 32%;
     }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0.3rem;
     border-radius: 0.25rem;
     position: relative;
@@ -14,6 +17,8 @@
   }
   img {
     width: 100%;
+    height: 100px;
+    object-fit: cover;
   }
   h1 {
     font-size: $fs_mobileRegular;
