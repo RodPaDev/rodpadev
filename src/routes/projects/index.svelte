@@ -2,28 +2,10 @@
   .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 1rem;
 }
-section {
-    padding: 1rem;
-}
-.project {
-    width: 32%;
-    margin: 0.3rem;
-    border-radius: 0.25rem;
-    position: relative;
-    border: 0.1rem solid black;
-    text-align: center;
-  }
-  img {
-    width: 100%;
-  }
-  h1 {
-    font-size: $fs_mobileRegular;
-  }
-  p {
-    font-size: $fs_mobileSmall;
-  }
+
 </style>
 
 <script context="module">
@@ -38,8 +20,8 @@ section {
 </script>
 
 <script>
+  import Card from './card.svelte';
   export let projects
-  projects = new Array(9).fill([...projects]).flat()
 </script>
 
 <svelte:head>
@@ -48,12 +30,6 @@ section {
 
 <div class="container">
   {#each projects as project}
-    <div class="project">
-      <img src="{project.thumbnail}" alt="" />
-      <section>
-        <h1>{project.name}</h1>
-        <p>{project.brief}</p>
-      </section>
-    </div>
+    <Card {project} />
   {/each}
 </div>

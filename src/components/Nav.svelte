@@ -8,14 +8,20 @@
     display: flex;
     justify-content: space-around;
     @media (min-width: $desktop) {
-    justify-content: flex-end
+      justify-content: flex-end
       
     }
   }
   li {
+    @media (max-width: $iphone5) {
+      padding: 0.5rem;
+    }
     padding: 1rem;
   }
   a {
+    @media (max-width: $iphone5) {
+      font-size: 1.9rem;
+    }
     font-size: 2rem;
     color: black;
     text-decoration: none;

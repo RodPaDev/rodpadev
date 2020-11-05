@@ -30,7 +30,7 @@ class ButterCMS {
 
   async getCollection(collection_name, params){
     try {
-      let result = await this.butter.content.retrieve(collection_name);
+      let result = await this.butter.content.retrieve(collection_name, params);
       let data = await result.data;
       return data;
     } catch (error) {
