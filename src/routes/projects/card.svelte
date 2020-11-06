@@ -47,6 +47,9 @@
 
 <script>
   export let project;
+  import dayjs from 'dayjs'
+  import relativeTime from 'dayjs/plugin/relativeTime'
+  dayjs.extend(relativeTime)
 </script>
 
 <div id="{project.name}" class="project">
@@ -55,6 +58,7 @@
     <h1>{project.name}</h1>
     <p>{project.brief}</p>
   </section>
+  <p>{dayjs(project.created).fromNow()}</p>
   <a rel="preload" href="/projects/{project.name}">
     <button>Learn More</button>
   </a>
