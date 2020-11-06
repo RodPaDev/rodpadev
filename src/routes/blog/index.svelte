@@ -76,8 +76,9 @@
       <p class="date">{dayjs(post.published).format('MMMM D, YYYY')}</p>
     </article>
   </a>
-{:else}
+{/each}
+<!-- {:else}
   <div class="loading">
     <Loading color="{'#f79515'}" size="{65}" />
   </div>
-{/each}
+{/each} -->
