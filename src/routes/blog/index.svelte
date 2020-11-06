@@ -38,27 +38,23 @@
 </style>
 
 <script context="module">
+  import ButterCMS from '../../includes/ButterCMS'
   export async function preload(page, session) {
     const { BUTTER } = session
+    let butter = new ButterCMS(BUTTER)
+    const posts = await butter.getPostAll(1)
 
-    return { token: BUTTER }
+    return {posts}
   }
 </script>
 
-<script lang="ts">
+<script>
   import dayjs from 'dayjs'
   
   import Loading from '../../components/Loading.svelte'
   
-  import { onMount } from 'svelte'
-  import ButterCMS from '../../includes/ButterCMS'
-  export let token
-  let butter = new ButterCMS(token)
-  let posts = []
-  onMount(async () => {
-    const res = await butter.getPostAll(1)
-    posts = res
-  })
+  export let posts
+
 </script>
 
 <svelte:head>
@@ -77,8 +73,3 @@
     </article>
   </a>
 {/each}
-<!-- {:else}
-  <div class="loading">
-    <Loading color="{'#f79515'}" size="{65}" />
-  </div>
-{/each} -->
