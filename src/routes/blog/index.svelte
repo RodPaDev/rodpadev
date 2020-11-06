@@ -53,7 +53,6 @@
   
   import Loading from '../../components/Loading.svelte'
   
-  // import { onMount } from 'svelte'
   export let posts
 
 </script>
@@ -74,8 +73,3 @@
     </article>
   </a>
 {/each}
-<!-- {:else}
-  <div class="loading">
-    <Loading color="{'#f79515'}" size="{65}" />
-  </div>
-{/each} -->
