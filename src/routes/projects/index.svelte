@@ -22,6 +22,7 @@
 <script>
   import Card from './card.svelte';
   export let projects
+  projects = projects.sort((a,b) => new Date(b.created) - new Date(a.created))
 </script>
 
 <svelte:head>

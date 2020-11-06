@@ -133,6 +133,10 @@
     src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fa09db30a87b736">
   </script>
   <title>🤔 {data.title}</title>
+  <meta property="og:description" content="{data.summary}">
+  <meta property="og:title" content="{data.title}">
+  <meta property="og:image" content="{data.featured_image}">
+  <meta property="og:type" content="article" />
 </svelte:head>
 
 <article>
