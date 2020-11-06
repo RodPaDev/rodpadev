@@ -124,6 +124,8 @@
 
   const date = dayjs(data.published).format('MMMM D, YYYY')
   const readTime = averageReadtime(data.body)
+
+  console.log(data)
 </script>
 
 <svelte:head>
@@ -137,6 +139,7 @@
   <meta property="og:title" content="{data.title}">
   <meta property="og:image" content="{data.featured_image}">
   <meta property="og:type" content="article" />
+  <meta property="og:url" content="{data.url}" />
 </svelte:head>
 
 <article>
