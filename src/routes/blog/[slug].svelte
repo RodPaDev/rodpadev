@@ -124,8 +124,6 @@
 
   const date = dayjs(data.published).format('MMMM D, YYYY')
   const readTime = averageReadtime(data.body)
-
-  console.log(data)
 </script>
 
 <svelte:head>
