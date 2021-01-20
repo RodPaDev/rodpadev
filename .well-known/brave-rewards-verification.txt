@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: rodpa.dev
+Token: 4e525392c0072dbe50212ac8d2b9ef4644b5bcb5ac59d2cf7e9d7c0a7b0035e2
