@@ -41,19 +41,18 @@
 
   <section class="intro">
     <p>
-      It's nice to see you around here! I'm a 23 year old fullstack software
+      It's nice to see you around here! I'm a 24 year old fullstack software
       developer.
     </p>
     <br/>
     <p>
-      Altough I attended Lambda School, I consider myself self-taught. My
-      mission in life is to change the school system, not to merely change it
-      but to revolutionize how we teach people.
+      I want to learn and teach software development and with my knowledge disrupt the education system 
+      which hasn't seen any innovation since they stopped using stone tablets for electronic ones.
     </p>
   </section>
 
   <section class="tech-skills">
     <h3>What are my most used tech skills?</h3>
-    <p>HTML, CSS, ReactJS, Redux, PostgreSQL, NodeJs, ExpressJs, Python, C#</p>
+    <p>AWS, React, PostgreSQL, DynamoDB, NodeJs, GraphQL, Go, Unity</p>
   </section>
 </div>
