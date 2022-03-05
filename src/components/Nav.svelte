@@ -55,9 +55,9 @@
     </li>
     <li>
       <a
-        rel="prefetch"
+        target="_blank" rel="noopener noreferrer"
         class="{segment === 'blog' ? 'selected' : ''}"
-        href="blog">
+        href="https://blog.rodpa.dev/">
         blog
       </a>
     </li>
