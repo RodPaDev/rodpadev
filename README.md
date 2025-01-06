@@ -1,1 +1,1 @@
-Taking a break for the foreseable future. Take care of your body and love one another.
+On a new adventure @ Altar.io. Let's see what the future brings!
