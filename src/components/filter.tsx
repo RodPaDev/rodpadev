@@ -72,6 +72,11 @@ function Filter({ tags }: Props) {
             </Button>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
+          {tags.length === 0 && (
+            <DropdownMenuLabel className="flex items-center justify-between">
+              <span>No tags available</span>
+            </DropdownMenuLabel>
+          )}
           {tags
             .sort((a, b) => b.postsCount - a.postsCount)
             .map(({ name, postsCount }) => (

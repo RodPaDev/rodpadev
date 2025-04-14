@@ -4,11 +4,15 @@ import Providers from "@/components/providers";
 import Scripts from "@/components/scripts";
 import { Toaster } from "@/components/ui/toaster";
 import { validateEnvVars } from "@/lib/utils";
-import { Inter } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import { Metadata } from "next/types";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export async function generateMetadata() {
   const title = "hashnode-next";
@@ -50,7 +54,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={spaceMono.className}>
         <div className="container flex min-h-screen flex-col pt-2">
           <Providers>
             <Scripts />

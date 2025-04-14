@@ -69,7 +69,7 @@ export default async function Page({ params }: Props) {
       <section className={cn(fadeIn, "animation-delay-200 mb-8 flex flex-col gap-1")}>
         <h1 className="text-3xl font-bold">{title}</h1>
         <h3 className="text-xs font-light">
-          {new Date(publishedAt).toLocaleDateString()} • {views} views • {readTimeInMinutes} min read
+          {new Date(publishedAt).toLocaleDateString()}
         </h3>
       </section>
       <article className={cn(fadeIn, "animation-delay-400")}>
