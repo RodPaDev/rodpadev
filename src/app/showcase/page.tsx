@@ -33,19 +33,34 @@ const projects: ShowcaseItem[] = [
     type: "work",
   },
   {
-    title: "Tasktimer",
-    description: "A lightweight, focused classroom timer PWA for teachers. Create sequential timed activities that automatically progress in order, perfect for managing lesson pacing.",
-    link: "https://tasktimer.rodpa.dev",
-    tags: ["TypeScript", "React", "Vite", "PWA", "TailwindCSS"],
-    type: "personal",
-  },
-  {
     title: "Codename_Deals",
     description:
       "A B2B platform that tracks offline deal activity. Teams can visualize negotiations, flag issues, add ratings, and monitor progress over time. Fully integrated with Salesforce and HubSpot.",
     link: "secretive",
     tags: ["TypeScript", "Node.js", "Angular", "Express.JS", "Kubernetes", "AWS (EKS)", "MongoDB", "Terraform"],
     type: "work",
+  },
+  {
+    title: "Tasktimer",
+    description:
+      "A lightweight, focused classroom timer PWA for teachers. Create sequential timed activities that automatically progress in order, perfect for managing lesson pacing.",
+    link: "https://tasktimer.rodpa.dev",
+    tags: ["TypeScript", "React", "Vite", "PWA", "TailwindCSS"],
+    type: "personal",
+  },
+  {
+    title: "Temp33",
+    description: "Temp33 is a software tool developed to monitor CPU and GPU temperatures using the Unykach AquaStorm 240 AIO cooler. This tool allows users to adjust the update frequency and select various sensor readings, ensuring tailored temperature management.",
+    link: "https://github.com/RodPaDev/temp33",
+    tags: [".NET", "C#"],
+    type: "personal",
+  },
+  {
+    title: "Chalk & Order",
+    description: "A point-and-click classroom management game built in Godot, winning 3rd place in ScoreSpace Jam #32. Players launch chalk at misbehaving students to maintain order during exams across increasingly challenging levels. Features global leaderboards via LootLocker integration, custom artwork, and sound design.",
+    link: "https://space-crusader.itch.io/chalk-and-order",
+    tags: ["Godot", "Game Development", "LootLocker SDK", "UI/UX Design", "Audio Implementation"],
+    type: "personal"
   },
   {
     title: "SecondSky Data",

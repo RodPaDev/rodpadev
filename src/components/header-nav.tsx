@@ -35,6 +35,10 @@ export function HeaderNav() {
       label: "showcase",
     },
     {
+      href: "/journey",
+      label: "journey",
+    },
+    {
       href: "/skills",
       label: "skills",
     },
