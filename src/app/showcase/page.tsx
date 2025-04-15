@@ -33,6 +33,13 @@ const projects: ShowcaseItem[] = [
     type: "work",
   },
   {
+    title: "Tasktimer",
+    description: "A lightweight, focused classroom timer PWA for teachers. Create sequential timed activities that automatically progress in order, perfect for managing lesson pacing.",
+    link: "https://tasktimer.rodpa.dev",
+    tags: ["TypeScript", "React", "Vite", "PWA", "TailwindCSS"],
+    type: "personal",
+  },
+  {
     title: "Codename_Deals",
     description:
       "A B2B platform that tracks offline deal activity. Teams can visualize negotiations, flag issues, add ratings, and monitor progress over time. Fully integrated with Salesforce and HubSpot.",
