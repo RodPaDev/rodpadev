@@ -1,20 +1,19 @@
 import { cn, fadeIn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
 
 const skills: Record<string, string[]> = {
   senior: ["TypeScript", "React", "Node.js", "Express.js", "GraphQL", "REST APIs", "PostgreSQL", "HTML & CSS", "SCSS"],
   intermediate: [
     "Terraform",
-    "AWS (non-certified)",
+    "AWS (Development & Solutions)",
     "Tailwind",
     "Jest",
     "Next.js",
     "Sequelize",
-    "CI/CD (GitHub Actions, AWS CodePipeline)",
+    "CI/CD (GitHub Actions & AWS CodePipeline)",
     "Event-Driven Architecture",
   ],
-  junior: ["Go", ".NET", "MongoDB", "Python", "Docker"],
-  newbie: ["Kubernetes", "kubectl", "Helm", "Rust", "Nginx", "Networking (TCP/IP, HTTP, DNS)"],
+  junior: ["Angular", "Go", ".NET", "MongoDB", "Python", "Docker"],
+  newbie: ["ArgoCD", "Kubernetes", "kubectl", "Helm", "Rust", "Nginx", "Networking (VPC, Subnets, LBs)"],
   tools: ["Git", "GitHub", "Jira", "Figma", "Postman", "Bash", "Linux"],
   soft: ["Ownership", "Orchestration", "Problem Solving", "High Agency", "Team Player", "Open Communicator"],
   languages: ["English", "Portuguese", "French", "German (rusty)"],
@@ -22,64 +21,47 @@ const skills: Record<string, string[]> = {
 };
 
 const skillToDescription: Record<string, string> = {
-  senior:
-    "Technologies I've mastered through extensive professional experience. I can architect solutions, troubleshoot complex issues, and mentor others with minimal reference to documentation.",
-  intermediate:
-    "Tools I work with confidently but recognize there are advanced features or optimization techniques I'm still exploring. Comfortable implementing solutions with occasional documentation checks.",
-  junior:
-    "Technologies I've used in projects but haven't had sufficient time to develop deep expertise. I understand core concepts but benefit from guidance on best practices.",
-  newbie: "Recently added to my toolkit. I grasp the fundamentals but haven't had the occasion to dive-in yet.",
-  tools: "Some of the tools I use daily",
-  soft: "Soft skills I value and practice",
-  languages: "Languages I can communicate in",
-  certifications: "Certifications I've earned",
+  senior: "Mastered; can architect and mentor",
+  intermediate: "Confident with occasional docs needed",
+  junior: "Used but need more experience",
+  newbie: "Recently learned, grasping basics",
+  tools: "Used in daily workflow",
+  soft: "Personal values I practice",
+  languages: "Languages I speak fluently",
+  certifications: "Credentials I've earned or am pursuing",
 };
 
 export default async function Home() {
   return (
     <main className="flex flex-col gap-2">
       <section className={cn(fadeIn, "animation-delay-100")}>
-        <span className="text-lg pt-3 mt-4 font-light text-muted-foreground sm:text-xl">
+        <span className="pt-3 mt-4 font-light text-muted-foreground">
           These are the skills I have acquired over the years, both in my professional career and personal projects.
-          <br />
-          <span className="font-semibold">This list is static and will be occasionally updated.</span>
         </span>
+
+        <p className="pt-3 mt-4 font-light text-muted-foreground">
+          My favorite design pattern is: <span className="font-semibold">No Design Pattern</span>
+          <p className="text-muted-foreground">
+            The key to good software is simplicity and clarity. A complex product can only benefit from a simple design. We should abstract only
+            because it's necessary, not because we can.
+          </p>
+        </p>
       </section>
 
-      <hr className={cn("border-1 border-muted-foreground pt-2 pb-1", fadeIn, "animation-delay-200")} />
-
-      <section className={cn(fadeIn, "animation-delay-300 flex flex-col items-center justify-center")}>
-        <div className="flex gap-2">
-          <ChevronDown className="text-muted-foreground animate-bounce" />
-          <span className="text-sm text-muted-foreground mb-2">Click on a section to jump to it</span>
-          <ChevronDown className="text-muted-foreground animate-bounce" />
-        </div>
-
-        <ul className="flex gap-2 items-center justify-between">
-          {Object.keys(skills).map((skill, index) => (
-            <a href={`#${skill}`} key={`link-${skill}`}>
-              <li key={skill} className={cn("text-sm text-muted-foreground cursor-pointer hover:text-primary", index > 0 && "border-l-2 pl-2")}>
-                {skill}
-              </li>
-            </a>
-          ))}
-        </ul>
-      </section>
+      <hr className={cn("border-1 border-muted-foreground mt-4 mb-4", fadeIn, "animation-delay-200")} />
 
       <section className={cn(fadeIn, "animation-delay-400")}>
-        <div className="flex flex-col gap-6 pt-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {Object.entries(skills).map(([skill, items], skillIndex) => (
             <div
               id={skill}
               key={skill}
-              className={cn("flex flex-col gap-2 border-t border-muted-foreground pt-4", fadeIn, `animation-delay-${500 + skillIndex * 100}`)}
+              className={cn("flex flex-col gap-2  border-muted-foreground pt-4", fadeIn, `animation-delay-${500 + skillIndex * 100}`)}
             >
-              <a href={`#${skill}`}>
-                <h3 className="text-lg font-semibold capitalize flex items-center cursor-default">
-                  <span className="text-2xl mr-2 text-center">#</span>
-                  <span>{skill}</span>
-                </h3>
-              </a>
+              <h3 className="text-lg font-semibold capitalize flex items-center cursor-default">
+                <span className="text-2xl mr-2 font-light text-center">#</span>
+                <span>{skill}</span>
+              </h3>
               <p className="text-sm text-muted-foreground">{skillToDescription[skill]}</p>
               <ul className="list-disc pl-5">
                 {items.map((item, itemIndex) => (

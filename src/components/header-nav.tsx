@@ -31,13 +31,17 @@ export function HeaderNav() {
       label: "home",
     },
     {
-      href: `/blog?${blogSearchParams.toString()}`,
-      label: "blog",
-      matchExact: false,
+      href: "/showcase",
+      label: "showcase",
     },
     {
       href: "/skills",
       label: "skills",
+    },
+    {
+      href: `/blog?${blogSearchParams.toString()}`,
+      label: "blog",
+      matchExact: false,
     },
   ];
 
@@ -46,7 +50,7 @@ export function HeaderNav() {
       <NavigationMenuList className="gap-4">
         {navs.map((nav) => (
           <NavigationMenuItem key={nav.href}>
-            <Link href={nav.href} className={cn(isActive(nav.href, nav.matchExact) && "underline text-primary")}>
+            <Link href={nav.href} className={cn("text-muted-foreground", isActive(nav.href, nav.matchExact) && "underline text-foreground")}>
               {nav.label}
             </Link>
           </NavigationMenuItem>
