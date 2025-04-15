@@ -3,8 +3,8 @@ import React from "react";
 
 function Footer() {
   const links = [
-    { href: "https://hashnode.com/headless", label: "GitHub" },
-    { href: "https://nextjs.org", label: "Linkedin" },
+    { href: "https://github.com/RodPaDev", label: "GitHub" },
+    { href: "https://www.linkedin.com/in/rodpadev/", label: "Linkedin" },
     // { href: "https://ui.shadcn.com", label: "shadcn/ui" },
     // { href: "https://vercel.com", label: "Vercel" },
   ];
