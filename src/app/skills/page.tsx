@@ -43,7 +43,7 @@ export default async function Home() {
           My favorite design pattern is: <span className="font-semibold">No Design Pattern</span>
           <p className="text-muted-foreground">
             The key to good software is simplicity and clarity. A complex product can only benefit from a simple design. We should abstract only
-            because it's necessary, not because we can.
+            because it&apos;s necessary, not because we can.
           </p>
         </p>
       </section>
