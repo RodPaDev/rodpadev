@@ -15,13 +15,13 @@ const spaceMono = Space_Mono({
 });
 
 export async function generateMetadata() {
-  const title = "hashnode-next";
-  const description = "The fastest way to go headless with Hashnode";
-  const images = "https://hashnode-next.dev/opengraph-image.png";
-  const url = "https://hashnode-next.dev";
+  const title = "rodpa.dev";
+  const description = "Portfolio and blog of rodpadev - a software engineer based in Portugal.";
+  const images = "https://rodpa.dev/opengraph-image.png";
+  const url = "https://rodpa.dev";
 
   const metadata: Metadata = {
-    metadataBase: new URL("https://hashnode-next.dev"),
+    metadataBase: new URL("https://rodpa.dev"),
     title,
     description,
     openGraph: {
@@ -37,8 +37,8 @@ export async function generateMetadata() {
       title,
       description,
       images,
-      creator: "@thealexkates",
-      site: "@thealexkates",
+      creator: "@rodpadev",
+      site: "@rodpadev",
     },
   };
 
