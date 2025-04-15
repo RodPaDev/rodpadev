@@ -23,7 +23,7 @@ export default function Page() {
       <section className={cn(fadeIn, "animation-delay-200 flex flex-col gap 2")}>
         <h1 className="text-4xl text-muted-primary font-bold sm:text-3xl">rodpa.dev</h1>
         <h2 className="text-md pt-3 font-light text-muted-foreground sm:text-md">
-          I&apos;m Patrick Rodrigues, a full-stack developer based in Portugal with a passion for building software, currently doing so at{" "}
+          I&apos;m Patrick Rodrigues, a full-stack developer based in Portugal with a passion for building software, currently groking at{" "}
           <a href="https://altar.io" className="underline hover:text-foreground">
             Altar.io
           </a>
