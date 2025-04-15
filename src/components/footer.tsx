@@ -23,7 +23,7 @@ function Footer() {
         ))}
         {" 👋"}
       </span>
-      <span className="mt-2">
+      <span className="mt-2 text-center">
         Built with{" "}
         <Link href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="underline">
           Next.js
