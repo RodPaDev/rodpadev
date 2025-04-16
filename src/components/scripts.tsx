@@ -3,14 +3,14 @@
 import { GA_TRACKING_ID } from "./analytics";
 
 export default function Scripts() {
-  const googleAnalytics = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());`;
+  const cloudflareAnalyticsToken = process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
+  if (!cloudflareAnalyticsToken) {
+    throw new Error("CLOUDFLARE_ANALYTICS_TOKEN is not defined");
+  }
   return (
     <>
       <script async src={`https://ping.hashnode.com/gtag/js?id=${GA_TRACKING_ID}`} />
-      <script dangerouslySetInnerHTML={{ __html: googleAnalytics }} />
+      <script async src={`https://static.cloudflareinsights.com/beacon.min.js`} data-cf-beacon={`{"token": "${cloudflareAnalyticsToken}"}`} />
     </>
   );
 }
