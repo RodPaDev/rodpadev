@@ -1,7 +1,14 @@
 import { Mdx } from "@/components/mdx";
 import { cn, fadeIn } from "@/lib/utils";
 import getBlogPostDraft from "@/server/get-blog-post-draft";
+import { Inconsolata } from "next/font/google";
+import Image from "next/image";
 import { Metadata } from "next/types";
+
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 type Props = {
   params: {
@@ -26,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
       title,
       description,
       type: "article",
-      siteName: "Alex Kates | Blog",
+      siteName: "rodpa.dev",
       images,
     },
     twitter: {
@@ -34,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
       title,
       description,
       images,
-      creator: "@alexkate",
+      creator: "@rodpadev",
     },
   };
 
@@ -51,17 +58,32 @@ export default async function Page({ params }: Props) {
   const title = draft.title || "";
   const markdown = draft.content?.markdown || "";
 
-  const { readTimeInMinutes, coverImage } = draft;
+  const { readTimeInMinutes, subtitle } = draft;
 
   return (
     <>
       <section className={cn(fadeIn, "animation-delay-200 mb-8 flex flex-col gap-1")}>
         <h1 className="text-3xl font-bold">{title}</h1>
+        {subtitle && <h2 className="text-xl font-light">{subtitle}</h2>}
         <h4 className="text-xs font-light">
-          {new Date().toLocaleDateString()} • 0 views • {readTimeInMinutes} min read • 0 likes
+          {new Date().toLocaleDateString()} • {readTimeInMinutes} min read
         </h4>
       </section>
-      <article className={cn(fadeIn, "animation-delay-400")}>
+      <article className={cn(inconsolata.className, fadeIn, "animation-delay-400 leading-7")}>
+        {draft.coverImage?.url && (
+          <Image
+            src={draft.coverImage?.url}
+            alt={title}
+            className="mb-4"
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            width={668}
+            height={445}
+          />
+        )}
         <Mdx code={markdown} />
       </article>
     </>

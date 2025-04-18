@@ -4,7 +4,7 @@ import { GA_TRACKING_ID } from "./analytics";
 
 export default function Scripts() {
   const cloudflareAnalyticsToken = process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
-  if (!cloudflareAnalyticsToken) {
+  if (!cloudflareAnalyticsToken && process.env.NODE_ENV !== "development") {
     throw new Error("CLOUDFLARE_ANALYTICS_TOKEN is not defined");
   }
   return (

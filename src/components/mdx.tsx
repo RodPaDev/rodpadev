@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import "highlight.js/styles/github-dark-dimmed.min.css";
-import { Lightbulb } from "lucide-react";
+import { ChevronDown, Lightbulb } from "lucide-react";
+import { isValidElement } from "react";
 import ReactMarkdown, { Components } from "react-markdown";
 import { Tweet } from "react-tweet";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -10,10 +11,43 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { Alert, AlertDescription } from "./ui/alert";
 
+interface CollapsibleBlockquoteProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const extractText = (node: React.ReactNode): string => {
+  if (typeof node === "string") return node;
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (isValidElement(node)) return extractText(node.props.children);
+  return "";
+};
+
+const CollapsibleBlockquote = ({ children, className }: CollapsibleBlockquoteProps) => {
+  const text = extractText(children);
+  const isTLDR = text.trim().startsWith("TL;DR:");
+
+  if (!isTLDR) {
+    return <blockquote className={cn("my-3 border-l-2 pl-6 italic", className)}>{children}</blockquote>;
+  }
+
+  return (
+    <div className="my-3">
+      <details className="group">
+        <summary className="flex cursor-pointer items-center pl-4 font-medium list-none group-open:mb-2">
+          <ChevronDown className="mr-2 h-4 w-4 transition-transform duration-200 group-open:rotate-180" />
+          <span className="text-sm">TLDR <span className="text-xs text-gray-700">{"(click to expand)"}</span></span>
+        </summary>
+        <blockquote className={cn("border-l-2 pl-6 italic mt-2", className)}>{children}</blockquote>
+      </details>
+    </div>
+  );
+};
+
 const components: Components = {
-  h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-6 text-3xl font-bold", className)} {...props} />,
-  h2: ({ className, node: _n, ...props }) => <h2 className={cn("mb-4 mt-6 text-2xl font-semibold", className)} {...props} />,
-  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-4 mt-6 text-xl font-semibold", className)} {...props} />,
+  h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-7 text-3xl font-bold", className)} {...props} />,
+  h2: ({ className, node: _n, ...props }) => <h2 className={cn("mb-4 mt-7 text-2xl font-semibold", className)} {...props} />,
+  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-4 mt-12 text-xl font-semibold", className)} {...props} />,
   h4: ({ className, node: _n, ...props }) => <h4 className={cn("text-lg font-semibold", className)} {...props} />,
   h5: ({ className, node: _n, ...props }) => <h5 className={cn("text-sm font-semibold", className)} {...props} />,
   h6: ({ className, node: _n, ...props }) => <h6 className={cn("text-base font-semibold", className)} {...props} />,
@@ -42,11 +76,11 @@ const components: Components = {
     return <a className={cn("underline underline-offset-4", className)} href={href ?? ""} target={target ?? "_blank"} {...props} />;
   },
   strong: ({ className, node: _n, ...props }) => <strong className={cn("font-bold", className)} {...props} />,
-  p: (props) => <p className={cn("my-4", props.className)} {...props} />,
+  p: (props) => <p className={cn("my-5", props.className)} {...props} />,
   ul: ({ className, node: _n, ...props }) => <ul className={cn("ml-6 list-disc", className)} {...props} />,
   ol: ({ className, node: _n, ...props }) => <ol className={cn("ml-6 list-decimal", className)} {...props} />,
   li: (props) => <li className={cn("mt-2", props.className)} {...props} />,
-  blockquote: ({ className, node: _n, ...props }) => <blockquote className={cn("my-3 border-l-2 pl-6 italic", className)} {...props} />,
+  blockquote: ({ children = null, ...props }) => <CollapsibleBlockquote {...props}>{children}</CollapsibleBlockquote>,
   img: ({ className, alt, ...props }) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("inline-block rounded-md", className)} alt={alt} {...props} />

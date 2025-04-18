@@ -15,7 +15,7 @@ export default function BlogPostListItem({ post }: Props) {
             <span className="text-lg">{post.title}</span>
           </Link>
           <div className="flex items-center text-sm">
-            <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+            <span>{new Date(post.publishedAt).toLocaleDateString()} • {post.readTimeInMinutes} min read</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-1">{post.tags?.map((tag) => <Badge key={tag.name}>{tag.name.toLocaleLowerCase()}</Badge>)}</div>

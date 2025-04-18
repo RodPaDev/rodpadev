@@ -31,7 +31,7 @@ export default function Page() {
         </h2>
       </section>
       <section className={cn(fadeIn, "animation-delay-400 w-full")}>
-        <hr className="border-1 border-muted-foreground pb-8" />
+        <h2 className="text-xl font-bold text-muted-primary ml-2 mb-3">Latest Blog Post:</h2>
         <Suspense fallback={<div className="animate-pulse h-24 bg-muted rounded-md"></div>}>
           <LatestPost />
         </Suspense>
