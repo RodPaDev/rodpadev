@@ -2,6 +2,7 @@ import BlogPostListItem from "@/components/blog-post-list-item";
 import { Post } from "@/hashnode/generated/graphql";
 import { cn, fadeIn } from "@/lib/utils";
 import { Suspense } from "react";
+export const dynamic = "force-dynamic";
 
 async function LatestPost() {
   'use client';
@@ -17,7 +18,7 @@ async function LatestPost() {
   );
 }
 
-export default function Page() {
+export default function Page() {  
   return (
     <main className="flex flex-col gap-4 pb-12 pt-4 text-left items-center sm:gap-8 sm:py-12">
       <section className={cn(fadeIn, "animation-delay-200 flex flex-col gap 2")}>
