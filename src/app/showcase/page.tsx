@@ -109,7 +109,7 @@ export default async function Home() {
     <main className="flex flex-col gap-2">
       <section className={cn(fadeIn, "animation-delay-100")}>
         <span className="pt-3 mt-4 font-light text-muted-foreground">
-          These are the projects I have worked on throughout my career, both in my professional life and personal projects.
+          These are the projects I have worked on throughout my career, both in my professional and personal life.
         </span>
       </section>
 
