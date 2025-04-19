@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT";
 type Position = { x: number; y: number };
@@ -11,7 +11,7 @@ export default function SnakeGame() {
   const [snake, setSnake] = useState<Position[]>([
     { x: 10, y: 10 },
     { x: 9, y: 10 },
-    { x: 8, y: 10 }
+    { x: 8, y: 10 },
   ]);
   const [food, setFood] = useState<Position>({ x: 5, y: 5 });
   const [direction, setDirection] = useState<Direction>("RIGHT");
@@ -25,7 +25,7 @@ export default function SnakeGame() {
   const generateFood = useCallback((): Position => {
     const x = Math.floor(Math.random() * (gridSize - 1));
     const y = Math.floor(Math.random() * (gridSize - 1));
-    const isOnSnake = snake.some(segment => segment.x === x && segment.y === y);
+    const isOnSnake = snake.some((segment) => segment.x === x && segment.y === y);
     return isOnSnake ? generateFood() : { x, y };
   }, [snake]);
 
@@ -33,7 +33,7 @@ export default function SnakeGame() {
     setSnake([
       { x: 10, y: 10 },
       { x: 9, y: 10 },
-      { x: 8, y: 10 }
+      { x: 8, y: 10 },
     ]);
     setFood(generateFood());
     setDirection("RIGHT");
@@ -56,16 +56,28 @@ export default function SnakeGame() {
 
       switch (e.key) {
         case "ArrowUp":
-          if (direction !== "DOWN") setDirection("UP");
+          if (direction !== "DOWN") {
+            e.preventDefault();
+            setDirection("UP");
+          }
           break;
         case "ArrowDown":
-          if (direction !== "UP") setDirection("DOWN");
+          if (direction !== "UP") {
+            e.preventDefault();
+            setDirection("DOWN");
+          }
           break;
         case "ArrowLeft":
-          if (direction !== "RIGHT") setDirection("LEFT");
+          if (direction !== "RIGHT") {
+            e.preventDefault();
+            setDirection("LEFT");
+          }
           break;
         case "ArrowRight":
-          if (direction !== "LEFT") setDirection("RIGHT");
+          if (direction !== "LEFT") {
+            e.preventDefault();
+            setDirection("RIGHT");
+          }
           break;
       }
     };
@@ -134,7 +146,7 @@ export default function SnakeGame() {
       head.x = (head.x + gridSize) % gridSize;
       head.y = (head.y + gridSize) % gridSize;
 
-      if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+      if (snake.some((segment) => segment.x === head.x && segment.y === head.y)) {
         setGameState("GAME_OVER");
         return;
       }
@@ -142,7 +154,7 @@ export default function SnakeGame() {
       const newSnake = [head, ...snake];
       if (head.x === food.x && head.y === food.y) {
         setFood(generateFood());
-        setScore(prev => prev + 1);
+        setScore((prev) => prev + 1);
       } else {
         newSnake.pop();
       }
@@ -163,7 +175,7 @@ export default function SnakeGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "green";
-    snake.forEach(segment => ctx.fillRect(segment.x * 15, segment.y * 15, 14, 14));
+    snake.forEach((segment) => ctx.fillRect(segment.x * 15, segment.y * 15, 14, 14));
 
     ctx.fillStyle = "red";
     ctx.fillRect(food.x * 15, food.y * 15, 14, 14);
@@ -172,20 +184,12 @@ export default function SnakeGame() {
   return (
     <>
       <div className="mt-6 relative touch-none">
-        <canvas
-          ref={canvasRef}
-          width={300}
-          height={300}
-          className="border border-muted-foreground bg-background rounded"
-        />
+        <canvas ref={canvasRef} width={300} height={300} className="border border-muted-foreground bg-background rounded" />
         {gameState === "GAME_OVER" && (
           <div className="absolute inset-0 bg-background/80 flex flex-col items-center justify-center">
             <p className="text-xl font-bold text-destructive">Game Over!</p>
             <p className="text-md text-muted-foreground">Score: {score}</p>
-            <button
-              onClick={resetGame}
-              className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
-            >
+            <button onClick={resetGame} className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90">
               Play Again
             </button>
           </div>
@@ -194,9 +198,7 @@ export default function SnakeGame() {
 
       <div className="mt-4 text-sm text-muted-foreground text-center">
         <p>Score: {score}</p>
-        <p className="mt-2">
-          {isMobile ? "Swipe to move" : "Use arrow keys to move"}
-        </p>
+        <p className="mt-2">{isMobile ? "Swipe to move" : "Use arrow keys to move"}</p>
       </div>
     </>
   );
