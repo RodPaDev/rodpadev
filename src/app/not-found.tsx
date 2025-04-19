@@ -1,7 +1,7 @@
 import { cn, fadeIn } from "@/lib/utils";
 import SnakeGame from "@/components/SnakeGame";
 
-export default function Page() {
+export default function NotFound() {
   return (
     <main className="flex flex-col gap-4 pb-12 pt-4 text-left items-center sm:gap-8 sm:py-12">
       <section className={cn(fadeIn, "animation-delay-200 flex flex-col gap-2 items-center")}>
