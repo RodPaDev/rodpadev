@@ -9,9 +9,10 @@
   </a>
 </p>
 <p align="center">
-i'm a <bold>fullstack software developerino withs software architecture skills</bold> and other relevant experience, but tbh just check the linkedin above.
+i'm a <strong>fullstack software developerino</strong> @ 
+<a href="https://github.com/altario">altar.io</a> with software architecture skills and other relevant experience, 
+but tbh just check the linkedin above.
 </p>
-
 ---
 
 3 things about me in promiscuous order (idk how to count):
