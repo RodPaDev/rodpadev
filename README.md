@@ -9,7 +9,7 @@
   </a>
 </p>
 <p align="center">
-i'm a fullstack software developerino with aws chops and other relevant experience, but tbh just check the linkedin above.
+i'm a <bold>fullstack software developerino withs software architecture skills</bold> and other relevant experience, but tbh just check the linkedin above.
 </p>
 
 ---
