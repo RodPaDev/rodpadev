@@ -13,7 +13,8 @@ i'm a <strong>fullstack software developerino</strong> @
 <a href="https://github.com/altario">altar.io</a> with software architecture skills and other relevant experience, 
 but tbh just check the linkedin above.
 </p>
----
+
+----
 
 3 things about me in promiscuous order (idk how to count):
 - i use vim btw (i'm ashamed to admit i still use vscode for work bcs haven't reached speed)
