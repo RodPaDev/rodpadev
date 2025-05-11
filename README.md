@@ -1,7 +1,3 @@
-<table>
-<tr>
-<td>
-
 # Hi, I'm Patrick R. 🧑‍💻
 
 3 things about me in analphabetic order
@@ -20,10 +16,3 @@ Most of my code never reaches GitHub.
 [![X](https://img.shields.io/badge/-@rodpadev-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://x.com/rodpadev)
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rodpadev)
-
-</td>
-<td align="right">
-<img src="/image.jpeg" alt="Patrick" width="200" />
-</td>
-</tr>
-</table>
