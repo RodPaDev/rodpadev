@@ -13,19 +13,20 @@ i'm a <strong>fullstack software developer</strong> @
 <a href="https://github.com/altario">altar.io</a> with software architecture skills and other relevant experience, 
 but tbh just check the linkedin above.
 </p>
+<p align="center">
+<strong>What actually gets me excited:</strong>
+<span align="center">tools that make devs faster, infrastructure you can trust, and systems built to scale.</>
+</span>
 
-**What actually gets me excited:**  
-tools that make devs faster, infrastructure you can trust, and systems built to scale.
-
-----
+---
 
 3 things about me in promiscuous order (idk how to count):
+
 - i use vim btw (i'm ashamed to admit i still use vscode for work bcs haven't reached speed)
 - i love programming, especially making tools (go is my ho)
 - i find joy in cursed refactors. the worse the code, the better. i will 100% insult whoever wrote it (past me included)
-- long-term projects with scaling issues give me wet dreams. side quests make me go brr brr. 
+- long-term projects with scaling issues give me wet dreams. side quests make me go brr brr.
 - i've still never finished skyrim's main quest
-
 
 [🐊 bombardiro crocodilo 🐊](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
