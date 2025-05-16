@@ -9,10 +9,13 @@
   </a>
 </p>
 <p align="center">
-i'm a <strong>fullstack software developerino</strong> @ 
+i'm a <strong>fullstack software developer</strong> @ 
 <a href="https://github.com/altario">altar.io</a> with software architecture skills and other relevant experience, 
 but tbh just check the linkedin above.
 </p>
+
+**What actually gets me excited:**  
+tools that make devs faster, infrastructure you can trust, and systems built to scale.
 
 ----
 
